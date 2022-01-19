@@ -23,5 +23,20 @@ function playRound(playerSelection, computerSelection) {
     // rock & scissors = rock win, rock & paper = paper win
     // rock & rock = draw, scissors & scissors = draw, paper & paper = draw
     // scissors & paper = scissors win
-    
+    switch(true) {
+        case playerSelection === "rock" && computerSelection === "scissors":
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You win`;
+        case playerSelection === "rock" && computerSelection === "paper":
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+        case playerSelection === "scissors" && computerSelection === "rock":
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+        case playerSelection === "scissors" && computerSelection === "paper" :
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You win`;
+        case playerSelection === "paper" && computerSelection === "rock":
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+        case playerSelection === "paper" && computerSelection === "scissors":
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+        case playerSelection === computerSelection:
+            return `You chose ${playerSelection}, computer chose ${computerSelection}. You draw with the computer`;
+    }
 }
