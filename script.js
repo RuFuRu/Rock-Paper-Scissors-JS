@@ -8,5 +8,5 @@ function computerPlay(input) {
     //with math.random select randomly one of those
     const array = ["Rock", "Paper", "Scissors"];
     let random = Math.floor(Math.random() * 3);
-    console.log(array[random]);
+    return console.log(array[random]);
 }
