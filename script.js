@@ -14,7 +14,7 @@ function computerPlay() {
 // won.
 
 // asks for Rock , Paper or Scissors, from the user
-let playerSelection = toLowerCase(prompt("Rock , Paper or Scissors?"));
+let playerSelection = prompt("Rock , Paper or Scissors?").toLowerCase();
 let computerSelection = computerPlay();
 
 function playRound(playerSelection, computerSelection) {
