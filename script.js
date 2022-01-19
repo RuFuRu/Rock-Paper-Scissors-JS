@@ -13,7 +13,7 @@ function computerPlay() {
 //then returns a string "You win" or "You lose" , depending on who
 // won.
 
-// asks for Rock , Paper or Scissors, from the user
+// will ask for Rock , Paper or Scissors, from the user, later
 let playerSelection;
 let computerSelection;
 
