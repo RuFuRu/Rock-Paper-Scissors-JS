@@ -14,12 +14,8 @@ function computerPlay() {
 // won.
 
 // asks for Rock , Paper or Scissors, from the user
-let playerSelection = prompt("Rock , Paper or Scissors?").toLowerCase();
-console.log(playerSelection);
-console.log(typeof playerSelection);
-let computerSelection = computerPlay();
-console.log(computerSelection);
-console.log(typeof computerSelection)
+let playerSelection;
+let computerSelection;
 
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
@@ -47,4 +43,13 @@ function playRound(player = playerSelection, computer = computerSelection) {
     }
 }
 
-console.log(playRound())
+//write a function that loops 5 times , logging the result of each game;
+function game() {
+    for(let i = 0; i < 5; i++) {
+        playerSelection = prompt("Rock , Paper or Scissors?").toLowerCase();
+        computerSelection = computerPlay();
+        console.log(playRound());
+    }
+}
+
+game();
