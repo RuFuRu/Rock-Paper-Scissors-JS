@@ -7,4 +7,6 @@ function computerPlay(input) {
     //put rock , paper and scissors in an array, then
     //with math.random select randomly one of those
     const array = ["Rock", "Paper", "Scissors"];
+    let random = Math.floor(Math.random() * 3);
+    console.log(array[random]);
 }
