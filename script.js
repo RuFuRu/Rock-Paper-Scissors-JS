@@ -15,9 +15,13 @@ function computerPlay() {
 
 // asks for Rock , Paper or Scissors, from the user
 let playerSelection = prompt("Rock , Paper or Scissors?").toLowerCase();
+console.log(playerSelection);
+console.log(typeof playerSelection);
 let computerSelection = computerPlay();
+console.log(computerSelection);
+console.log(typeof computerSelection)
 
-function playRound(playerSelection, computerSelection) {
+function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
     //write win or lose based on the following criteria:
     // rock & scissors = rock win, rock & paper = paper win
@@ -38,5 +42,9 @@ function playRound(playerSelection, computerSelection) {
             return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
         case playerSelection === computerSelection:
             return `You chose ${playerSelection}, computer chose ${computerSelection}. You draw with the computer`;
+        default:
+            return "Please type in either rock, paper or scissors";
     }
 }
+
+console.log(playRound())
