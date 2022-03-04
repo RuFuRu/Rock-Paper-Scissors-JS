@@ -1,21 +1,20 @@
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener('click',playRound);
+});
+
 // function that on user input randomly selects rock,paper or scissor
 // and returns the outcome
 function computerPlay() {
-    //put rock , paper and scissors in an array, then
-    //with math.random select randomly one of those
     const array = ["rock", "paper", "scissors"];
     let random = Math.floor(Math.random() * 3);
     return array[random]; 
 }
-//write a function that plays a single game of Rock, Paper, Scissors
-// it takes 2 parametres = playerSelection and computerSelection
-//(they should be caseinsensitive)
-//then returns a string "You win" or "You lose" , depending on who
-// won.
 
-// will ask for Rock , Paper or Scissors, from the user, later
+
 let playerSelection;
-let computerSelection;
+let computerSelection = computerPlay();
 
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
@@ -43,10 +42,4 @@ function playRound(player = playerSelection, computer = computerSelection) {
     }
 }
 
-//write a function that loops 5 times , logging the result of each game;
 
-const buttons = document.querySelectorAll("button");
-
-buttons.forEach((button) => {
-    button.addEventListener('click',playRound);
-});
