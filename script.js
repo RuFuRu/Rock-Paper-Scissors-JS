@@ -45,3 +45,8 @@ function playRound(player = playerSelection, computer = computerSelection) {
 
 //write a function that loops 5 times , logging the result of each game;
 
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+    button.addEventListener('click',playRound);
+});
