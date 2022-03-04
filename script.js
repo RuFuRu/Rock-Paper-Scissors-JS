@@ -44,12 +44,4 @@ function playRound(player = playerSelection, computer = computerSelection) {
 }
 
 //write a function that loops 5 times , logging the result of each game;
-function game() {
-    for(let i = 0; i < 5; i++) {
-        playerSelection = prompt("Rock , Paper or Scissors?").toLowerCase();
-        computerSelection = computerPlay();
-        console.log(playRound());
-    }
-}
 
-game();
