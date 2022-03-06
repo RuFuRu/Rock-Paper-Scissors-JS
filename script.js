@@ -8,23 +8,28 @@ function computerPlay() {
     return array[random]; 
 }
 
-function playersPlay() {
-    buttons.forEach((button) => {
-        button.addEventListener('click', () => {
-            if(button.classList.contains("rock")) {
-                return "rock"
-            }
-            else if(button.classList.contains("paper")) {
-                return "paper"
-            }
-            else if(button.classList.contains("scissors")) {
-                return "scissors"
-            }
-        });
-    });
-}
-let playerSelection = playersPlay();
 let computerSelection = computerPlay();
+let playerSelection;
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if(button.classList.contains("rock")) {
+            playerSelection = "rock";
+            console.log(playRound());
+        }
+        else if(button.classList.contains("paper")) {
+            playerSelection = "paper";
+            console.log(playRound());
+        }
+        else if(button.classList.contains("scissors")) {
+            playerSelection = "scissors";
+            console.log(playRound());
+        }
+    });
+});
+
+
+
 
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
