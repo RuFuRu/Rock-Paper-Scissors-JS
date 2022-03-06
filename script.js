@@ -1,6 +1,11 @@
+const body = document.querySelector('body');
 const buttons = document.querySelectorAll('button');
 const playerScore = document.querySelector('.playerScore');
 const computerScore = document.querySelector('.computerScore');
+const scoreContainer = document.querySelector('.score-container');
+
+const victory = document.createElement('div');
+victory.setAttribute('style', 'text-align: center; margin-top: 2rem; font-size: 2rem;')
 
 // function that on user input randomly selects rock,paper or scissor
 // and returns the outcome
@@ -81,13 +86,17 @@ function playRound(player = playerSelection, computer = computerSelection) {
         default:
             return console.log("error");
     }
-    if(ps === 5) {
-        return ps;
+    if(ps === 5 && cs === 5) {
+        body.insertBefore(victory, scoreContainer.nextSibling);
+        victory.textContent = "Draw!"
     }
-
-    if(cs === 5) {
-        return cs;
+    else if(ps === 5) {
+        body.insertBefore(victory, scoreContainer.nextSibling);
+        victory.textContent = "You've won!"
+    }
+    else if(cs === 5) {
+        body.insertBefore(victory, scoreContainer.nextSibling);
+        victory.textContent = "You've unfortunately lost!"
     }
 }
 
-if(ps)
