@@ -94,6 +94,7 @@ function playRound(player = playerSelection, computer = computerSelection) {
         for(let i = 0; i < buttons.length; i++) {
             buttons[i].setAttribute('disabled', 'true');
         }
+        refreshButton();
     }
     else if(ps === 5) {
         body.insertBefore(victory, scoreContainer.nextSibling);
@@ -101,6 +102,7 @@ function playRound(player = playerSelection, computer = computerSelection) {
         for(let i = 0; i < buttons.length; i++) {
             buttons[i].setAttribute('disabled', 'true');
         }
+        refreshButton();
     }
     else if(cs === 5) {
         body.insertBefore(victory, scoreContainer.nextSibling);
@@ -108,6 +110,16 @@ function playRound(player = playerSelection, computer = computerSelection) {
         for(let i = 0; i < buttons.length; i++) {
             buttons[i].setAttribute('disabled', 'true');
         }
+        refreshButton();
     }
 }
 
+function refreshButton() {
+    const refBtn = document.createElement("p");
+    body.insertBefore(refBtn, victory.nextSibling);
+    refBtn.setAttribute('style', 'text-align: center; background-color: white; border: 2px, black , solid; font-size: 1.5rem; cursor: pointer;')
+    refBtn.textContent = "Want to try again? Click me!"
+    refBtn.addEventListener('click', () => {
+        location.reload();
+    })
+}
