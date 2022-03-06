@@ -20,6 +20,8 @@ let playerSelection;
 
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
+        button.style.backgroundColor = 'orange';
+        setTimeout(() => {button.style.backgroundColor = "white"},170);
         if(button.classList.contains("rock")) {
             playerSelection = "rock";
             playRound();
