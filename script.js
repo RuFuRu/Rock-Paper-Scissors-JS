@@ -89,14 +89,23 @@ function playRound(player = playerSelection, computer = computerSelection) {
     if(ps === 5 && cs === 5) {
         body.insertBefore(victory, scoreContainer.nextSibling);
         victory.textContent = "Draw!"
+        for(let i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute('disabled', 'true');
+        }
     }
     else if(ps === 5) {
         body.insertBefore(victory, scoreContainer.nextSibling);
         victory.textContent = "You've won!"
+        for(let i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute('disabled', 'true');
+        }
     }
     else if(cs === 5) {
         body.insertBefore(victory, scoreContainer.nextSibling);
         victory.textContent = "You've unfortunately lost!"
+        for(let i = 0; i < buttons.length; i++) {
+            buttons[i].setAttribute('disabled', 'true');
+        }
     }
 }
 
