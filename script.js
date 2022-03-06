@@ -1,10 +1,4 @@
-const rock = document.querySelector(".rock");
-const paper = document.querySelector(".paper");
-const scissors = document.querySelector(".scissors");
-
-rock.addEventListener('click', () => {
-    console.log(true);
-})
+const buttons = document.querySelectorAll('button');
 
 // function that on user input randomly selects rock,paper or scissor
 // and returns the outcome
@@ -18,6 +12,19 @@ function computerPlay() {
 let playerSelection;
 let computerSelection = computerPlay();
 
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if(button.classList.contains("rock")) {
+            console.log("rock");
+        }
+        else if(button.classList.contains("paper")) {
+            console.log("paper")
+        }
+        else if(button.classList.contains("scissors")) {
+            console.log("scissors");
+        }
+    })
+})
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
     //write win or lose based on the following criteria:
