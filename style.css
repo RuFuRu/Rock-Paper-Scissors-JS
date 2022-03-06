@@ -43,11 +43,6 @@ main > button:hover {
     background-image: url(images/scissors.svg);
 }
 
-.animation {
-    background-color: hsl(47, 100%, 50%);
-    animation: change-color 1s ease-out;
-}
-
 .score-container {
     display: flex;
     justify-content: center;
