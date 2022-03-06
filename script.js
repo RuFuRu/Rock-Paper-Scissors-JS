@@ -1,8 +1,10 @@
-const buttons = document.querySelectorAll("button");
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
-buttons.forEach((button) => {
-    button.addEventListener('click',playRound);
-});
+rock.addEventListener('click', () => {
+    console.log(true);
+})
 
 // function that on user input randomly selects rock,paper or scissor
 // and returns the outcome
