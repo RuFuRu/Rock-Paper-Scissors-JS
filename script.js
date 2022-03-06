@@ -8,23 +8,24 @@ function computerPlay() {
     return array[random]; 
 }
 
-
-let playerSelection;
+function playersPlay() {
+    buttons.forEach((button) => {
+        button.addEventListener('click', () => {
+            if(button.classList.contains("rock")) {
+                return "rock"
+            }
+            else if(button.classList.contains("paper")) {
+                return "paper"
+            }
+            else if(button.classList.contains("scissors")) {
+                return "scissors"
+            }
+        });
+    });
+}
+let playerSelection = playersPlay();
 let computerSelection = computerPlay();
 
-buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        if(button.classList.contains("rock")) {
-            console.log("rock");
-        }
-        else if(button.classList.contains("paper")) {
-            console.log("paper")
-        }
-        else if(button.classList.contains("scissors")) {
-            console.log("scissors");
-        }
-    })
-})
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
     //write win or lose based on the following criteria:
