@@ -17,21 +17,22 @@ buttons.forEach((button) => {
     button.addEventListener('click', () => {
         if(button.classList.contains("rock")) {
             playerSelection = "rock";
-            console.log(playRound());
+            playRound();
         }
         else if(button.classList.contains("paper")) {
             playerSelection = "paper";
-            console.log(playRound());
+            playRound();
         }
         else if(button.classList.contains("scissors")) {
             playerSelection = "scissors";
-            console.log(playRound());
+            playRound();
         }
     });
 });
 
 
-
+let ps = 0;
+let cs = 0;
 
 function playRound(player = playerSelection, computer = computerSelection) {
     //compare what player and computer selected.
@@ -39,24 +40,54 @@ function playRound(player = playerSelection, computer = computerSelection) {
     // rock & scissors = rock win, rock & paper = paper win
     // rock & rock = draw, scissors & scissors = draw, paper & paper = draw
     // scissors & paper = scissors win
+    
     switch(true) {
         case playerSelection === "rock" && computerSelection === "scissors":
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You win`;
+            ps++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === "rock" && computerSelection === "paper":
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+            ps++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === "scissors" && computerSelection === "rock":
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+            cs++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === "scissors" && computerSelection === "paper" :
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You win`;
+            ps++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === "paper" && computerSelection === "rock":
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+            ps++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === "paper" && computerSelection === "scissors":
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You lose`;
+            cs++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         case playerSelection === computerSelection:
-            return `You chose ${playerSelection}, computer chose ${computerSelection}. You draw with the computer`;
+            ps++;
+            cs++;
+            playerScore.textContent = ps;
+            computerScore.textContent = cs;
+            break;
         default:
-            return "Please type in either rock, paper or scissors";
+            return console.log("error");
+    }
+    if(ps === 5) {
+        return ps;
+    }
+
+    if(cs === 5) {
+        return cs;
     }
 }
 
-
+if(ps)
