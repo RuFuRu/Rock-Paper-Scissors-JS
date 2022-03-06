@@ -7,7 +7,9 @@
 main {
     display: flex;
     justify-content: center;
+    align-items: stretch;
     gap: 5%;
+    height: 150px;
 }
 
 h2 {
@@ -16,10 +18,30 @@ h2 {
     text-align: center;
 }
 
-button {
-    width: 7%;
+main > button {
+    width: 8%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 0;
+    background-color: white;
+    
 }
 
+main > button:hover {
+    background-color: hsl(60, 11%, 95%);
+}
+
+.rock {
+    background-image: url(images/rock.svg);
+}
+
+.paper {
+    background-image: url(images/paper.svg);
+}
+
+.scissors {
+    background-image: url(images/scissors.svg);
+}
 .score-container {
     display: flex;
     justify-content: center;
