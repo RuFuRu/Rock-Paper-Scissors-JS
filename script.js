@@ -1,4 +1,5 @@
 const buttons = document.querySelectorAll('button');
+const score = document.querySelector('.score');
 
 // function that on user input randomly selects rock,paper or scissor
 // and returns the outcome
